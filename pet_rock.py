@@ -11,35 +11,31 @@ def stat_countdown():
     happy -= 1
     clean -= 1
     hungry += 1
+
 def mood():
     if happy > 5 or clean > 5 or hungry < 5:
-        print("o(＾▽＾)o")
+        print("\n\no(＾▽＾)o")
     elif happy > 3 or clean > 3 or hungry < 7:
-        print("(•‿•)")
+        print("\n\n(•‿•)")
     elif happy > 1 or clean > 1 or hungry < 9:
-        print("(•︵•)")
+        print("\n\n(•︵•)")
     else:
-        print("(ಥ﹏ಥ)")
+        print("\n\n(ಥ﹏ಥ)")
 
 def cool_rock():
-    print("""
-    (•_•)
-    ( •_•)>⌐■-■
-    (⌐■_■)
-    """)
+    print("(•_•)".ljust(20), end='\r')
+    time.sleep(0.5)
+    print("( •_•)>⌐■-■".ljust(20), end='\r')
+    time.sleep(0.5)
+    print("(⌐■_■)".ljust(20), end='\r')
 
 def status():
-    type_out(f"\n\nHappiness: {happy}\n")
+    type_out(f"\nHappiness: {happy}\n")
     type_out(f"Cleanliness: {clean}\n")
-    type_out(f"Hunger: {hungry}\n\n")
+    type_out(f"Hunger: {hungry}\n")
 
-def play():
-    global happy
-    happy += 2
-    type_out(f"You play with {pet_name}. It seems happy!")
-    status()
-
-print("""____      _     ____            _      ____  _           
+print("""
+ ____      _     ____            _      ____  _           
 |  _ \ ___| |_  |  _ \ ___   ___| | __ / ___|(_)_ __ ___  
 | |_) / _ \ __| | |_) / _ \ / __| |/ / \___ \| | '_ ` _ \ 
 |  __/  __/ |_  |  _ < (_) | (__|   <   ___) | | | | | | |
@@ -48,7 +44,7 @@ print("""____      _     ____            _      ____  _
 type_out("\n\nwhat do you want to name your pet rock:")
 pet_name = input("\n")
 type_out(f"Congratulations! You now have a pet rock named {pet_name} Take good care of it!")
-
+time.sleep(1)
 happy = 5
 clean = 5
 hungry = 5
@@ -116,11 +112,11 @@ while True:
             type_out("you feel sad and lonely\n")
             type_out("GAME OVER")
             sys.exit()
-    elif action == 5:
+    elif action == "5":
         print(f"you find glasses and put them on {pet_name}")
         cool_rock()
         break
-        
+
     stat_countdown()
 
 while True:
@@ -140,6 +136,7 @@ while True:
     if action == "2":
         type_out(f"you take {pet_name} to the bath and set it in")
         look = input("do you look away y/n\n")
+
         if look == "y":
             type_out(f"you look away then back and {pet_name} has eroded away")
             type_out("your only friend is gone")
@@ -169,6 +166,7 @@ while True:
                 type_out("everyone is gone")
                 type_out("GAME OVER")
                 sys.exit()
+
     if action == "4":
         print("you stare at", pet_name, "for a while")
         print("you see a hammer and a vail of liquid")
