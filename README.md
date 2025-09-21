@@ -91,3 +91,4 @@ flowchart
     
     H -->|If dead| [game_over()]
     H -->|Else| C
+```
