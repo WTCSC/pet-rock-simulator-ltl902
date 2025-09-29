@@ -69,11 +69,6 @@ When your rock is gone…
 
 ---
 
-```mermaid
-flowchart TD
-    X[Start] --> Y[End]
-```
-
 ## Function Flowchart
 ```mermaid
 flowchart TD
