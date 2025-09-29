@@ -69,26 +69,30 @@ When your rock is gone…
 
 ---
 
-## Function Flowchart
-
 ```mermaid
-flowchart
-
-    A[main()] --> B[init_pet()]
-    A --> C[game_loop()]
-    
-    C --> D[display_status()]
-    C --> E[get_player_choice()]
-    C --> F[apply_choice()]
-    C --> G[update_stats()]
-    C --> H[check_game_over()]
-    
-    F --> F1[play_with_pet()]
-    F --> F2[clean_pet()]
-    F --> F3[feed_pet()]
-    F --> F4[stare_at_pet()]
-    F --> F5[put_glasses_on_pet()]
-    
-    H -->|If dead| [game_over()]
-    H -->|Else| C
+flowchart TD
+    X[Start] --> Y[End]
 ```
+
+## Function Flowchart
+```mermaid
+flowchart TD
+    A["main()"] --> B["init_pet()"]
+    A --> C["game_loop()"]
+    
+    C --> D["display_status()"]
+    C --> E["get_player_choice()"]
+    C --> F["apply_choice()"]
+    C --> G["update_stats()"]
+    C --> H["check_game_over()"]
+    
+    F --> F1["play_with_pet()"]
+    F --> F2["clean_pet()"]
+    F --> F3["feed_pet()"]
+    F --> F4["stare_at_pet()"]
+    F --> F5["put_glasses_on_pet()"]
+    
+    H -->|If dead| I["game_over()"]
+    H -->|Else| C
+
+
